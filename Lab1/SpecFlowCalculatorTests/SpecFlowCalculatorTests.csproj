@@ -1,0 +1,103 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\UsingCalculatorAddition - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\UsingCalculatorAvailability - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\UsingCalculatorBasicReliability - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\UsingCalculatorFactorial - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\UsingCalculatorLogarithmicReliability - Copy.feature.cs" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\UsingCalculatorMultiply - Copy.feature.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.6.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="SpecFlow" Version="4.0.31-beta" />
+    <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
+    <PackageReference Include="SpecFlow.NUnit" Version="4.0.31-beta" />
+    <PackageReference Include="Nunit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.4.2" />
+    <PackageReference Include="FluentAssertions" Version="6.2.0" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="4.0.31-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Drivers\" />
+    <Folder Include="Support\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ICT3101_Calculator\ICT3101_Calculator.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Features\UsingCalculatorAreaOfShapes.feature.cs">
+      <DependentUpon>UsingCalculatorAreaOfShapes.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\UsingCalculatorSSI.feature.cs">
+      <DependentUpon>UsingCalculatorSSI.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\UsingCalculatorLogarithmicReliability.feature.cs">
+      <DependentUpon>UsingCalculatorLogarithmicReliability.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\UsingCalculatorBasicReliability.feature.cs">
+      <DependentUpon>UsingCalculatorBasicReliability.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\UsingCalculatorAvailability.feature.cs">
+      <DependentUpon>UsingCalculatorAvailability.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\UsingCalculatorFactorial.feature.cs">
+      <DependentUpon>UsingCalculatorFactorial.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Features\UsingCalculatorMultiply.feature.cs">
+      <DependentUpon>UsingCalculatorMultiply.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\UsingCalculatorAreaOfShapes.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\UsingCalculatorSSI.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\UsingCalculatorLogarithmicReliability.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\UsingCalculatorBasicReliability.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\UsingCalculatorAvailability.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\UsingCalculatorFactorial.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\UsingCalculatorMultiply.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+  </ItemGroup>
+
+</Project>
