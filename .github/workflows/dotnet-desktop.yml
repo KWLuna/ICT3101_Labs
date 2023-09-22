@@ -84,7 +84,7 @@ jobs:
     #   run: dotnet test
 
     - name: NUnit Tests
-      working-directory: Lab1\ICT3101_Calculator.UnitTests\
+      working-directory: Lab1\ICT3101_Calculator.UnitTest\
       run: dotnet test --no-build --verbosity normal
       
     - name: SpecFLow Tests
