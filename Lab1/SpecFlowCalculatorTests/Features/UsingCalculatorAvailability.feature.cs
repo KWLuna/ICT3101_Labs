@@ -80,7 +80,7 @@ namespace SpecFlowCalculatorTests.Features
         [NUnit.Framework.TestCaseAttribute("1", "5", "6", null)]
         [NUnit.Framework.TestCaseAttribute("10", "12", "22", null)]
         [NUnit.Framework.TestCaseAttribute("5", "6", "11", null)]
-        public async System.Threading.Tasks.Task CalculatingMTBF(string value1, string value2, string value3, string[] exampleTags)
+        public async System.Threading.Tasks.Task CalculatingMTBF(string mTTR, string mTTF, string result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Availability"};
@@ -90,9 +90,9 @@ namespace SpecFlowCalculatorTests.Features
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("value1", value1);
-            argumentsOfScenario.Add("value2", value2);
-            argumentsOfScenario.Add("value3", value3);
+            argumentsOfScenario.Add("MTTR", mTTR);
+            argumentsOfScenario.Add("MTTF", mTTF);
+            argumentsOfScenario.Add("result", result);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculating MTBF", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
@@ -108,10 +108,10 @@ this.ScenarioInitialize(scenarioInfo);
   await testRunner.GivenAsync("I have a calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-  await testRunner.WhenAsync(string.Format("I have entered {0}  and {1} into the calculator and press MTBF", value1, value2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  await testRunner.WhenAsync(string.Format("I have entered {0}  and {1} into the calculator and press MTBF", mTTR, mTTF), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
-  await testRunner.ThenAsync(string.Format("the availability result should be {0}", value3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  await testRunner.ThenAsync(string.Format("the availability result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -123,7 +123,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("5", "5", "1", null)]
         [NUnit.Framework.TestCaseAttribute("4", "2", "2", null)]
         [NUnit.Framework.TestCaseAttribute("10", "5", "2", null)]
-        public async System.Threading.Tasks.Task CalculatingAvailability(string value1, string value2, string value3, string[] exampleTags)
+        public async System.Threading.Tasks.Task CalculatingAvailability(string mTTF, string mTBF, string result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "Availability"};
@@ -133,9 +133,9 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("value1", value1);
-            argumentsOfScenario.Add("value2", value2);
-            argumentsOfScenario.Add("value3", value3);
+            argumentsOfScenario.Add("MTTF", mTTF);
+            argumentsOfScenario.Add("MTBF", mTBF);
+            argumentsOfScenario.Add("result", result);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculating Availability", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 18
 this.ScenarioInitialize(scenarioInfo);
@@ -151,10 +151,10 @@ this.ScenarioInitialize(scenarioInfo);
   await testRunner.GivenAsync("I have a calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 20
-  await testRunner.WhenAsync(string.Format("I have entered {0} and {1} into the calculator and press Availability", value1, value2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  await testRunner.WhenAsync(string.Format("I have entered {0} and {1} into the calculator and press Availability", mTTF, mTBF), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 21
-  await testRunner.ThenAsync(string.Format("the availability result should be {0}", value3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  await testRunner.ThenAsync(string.Format("the availability result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

@@ -161,12 +161,18 @@ public class Calculator
     // MTBF = MTTR + MTTF
     public double MTBF(double MTTR, double MTTF)
     {
+        if (MTTR <= 0 || MTTF <= 0)
+            throw new ArgumentException("Cannot be lesser or equal to 0");
+
         return Add(MTTR, MTTF);
     }
 
     // Availability = MTTF / MTBF 
     public double Availability(double MTTF, double MTBF)
     {
+        if (MTTF <= 0 || MTBF <= 0)
+            throw new ArgumentException("Cannot be lesser or equal to 0");
+
         double result = Divide(MTTF, MTBF);
         return RoundUp(result);
     }
@@ -174,6 +180,8 @@ public class Calculator
     // failurue intensity = initial failure intensity * ( 1 - average failure at time T / total failure over infinite time)
     public double BasicFailureIntensity(double initialFailure, double expectedFailure, double totalFailure)
     {
+        if (totalFailure <= 0 || initialFailure <= 0 || totalFailure <= 0)
+            throw new ArgumentException("Cannot be lesser or equal to 0");
 
         double result = initialFailure * (1 - expectedFailure / totalFailure);
         return RoundUp(result);
@@ -182,6 +190,10 @@ public class Calculator
     // average expected failure = total failure over infinite time * ( 1 - exponential ( initial failure intensity / total failure over infinite time * time))
     public double BasicExpectedFailure(double totalFailure, double initialFailure, double time)
     {
+        if (totalFailure <= 0 || initialFailure <= 0 || time <= 0)
+            throw new ArgumentException("Cannot be lesser or equal to 0");
+
+
         double exponential = Math.Exp(-1 * (initialFailure / totalFailure) * time);
         double result = totalFailure * (1 - exponential);
 
@@ -191,15 +203,13 @@ public class Calculator
     // failure intensity at time = initial failure intensity * exp ( - decay parameter * average expected failure)
     public double LogFailureIntensity(double initialIntensity, double decayParameter, double expectedFailure)
     {
+        if (initialIntensity <= 0 || decayParameter <= 0 || expectedFailure <= 0)
+            throw new ArgumentException("Cannot be lesser or equal to 0");
 
         double exponential = Math.Exp(Multiply(Multiply(decayParameter, expectedFailure), -1));
         double result = Multiply(initialIntensity, exponential);
 
         return RoundUp(result);
-        //return Math.Floor(result *100) / 100;
-        //Console.WriteLine(Math.Floor(exponential));
-
-        //return result;
     }
 
     // average expected failure at time = 1 / failure intensity decay parameter * ln( initial failure intensity * failure intensity decay parameter * time + 1 )

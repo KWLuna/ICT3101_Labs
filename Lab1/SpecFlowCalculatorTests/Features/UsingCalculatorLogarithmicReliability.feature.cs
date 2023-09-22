@@ -83,7 +83,7 @@ namespace SpecFlowCalculatorTests.Features
         [NUnit.Framework.DescriptionAttribute("Calculating Failure Intensity using Logarithmic Model")]
         [NUnit.Framework.CategoryAttribute("LogarithmicReliability")]
         [NUnit.Framework.TestCaseAttribute("10", "0.02", "50", "3.68", null)]
-        [NUnit.Framework.TestCaseAttribute("55", "0.03", "45", "14.3", null)]
+        [NUnit.Framework.TestCaseAttribute("55", "0.03", "45", "14.26", null)]
         [NUnit.Framework.TestCaseAttribute("50", "0.025", "60", "11.16", null)]
         public async System.Threading.Tasks.Task CalculatingFailureIntensityUsingLogarithmicModel(string initialIntensity, string decayParameter, string expectedFailure, string result, string[] exampleTags)
         {
