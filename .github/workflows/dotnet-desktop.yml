@@ -58,8 +58,8 @@ jobs:
       run:
         working-directory: \Lab1\
     env:
-      Solution_Name: Lab1.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
-      Test_Project_Path: Lab1\SpecFlowCalculatorTests\SpecFlowCalculatorTests.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
+      Solution_Name:  Lab1.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
+      Test_Project_Path: SpecFlowCalculatorTests\SpecFlowCalculatorTests.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
       # Wap_Project_Directory: your-wap-project-directory-name    # Replace with the Wap project directory relative to the solution, i.e. MyWpfApp.Package.
       # Wap_Project_Path: your-wap-project-path                   # Replace with the path to your Wap project, i.e. MyWpf.App.Package\MyWpfApp.Package.wapproj.
 
@@ -84,11 +84,11 @@ jobs:
     #   run: dotnet test
 
     - name: NUnit Tests
-      working-directory: Lab1\ICT3101_Calculator.UnitTest\
+      working-directory: ICT3101_Calculator.UnitTest\
       run: dotnet test --no-build --verbosity normal
       
     - name: SpecFLow Tests
-      working-directory: Lab1\SpecFlowCalculatorTests\
+      working-directory: SpecFlowCalculatorTests\
       run: dotnet test --no-build --verbosity normal
       
 
