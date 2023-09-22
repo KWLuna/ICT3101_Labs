@@ -196,6 +196,10 @@ public class Calculator
         double result = Multiply(initialIntensity, exponential);
 
         return RoundUp(result);
+        //return Math.Floor(result *100) / 100;
+        //Console.WriteLine(Math.Floor(exponential));
+
+        //return result;
     }
 
     // average expected failure at time = 1 / failure intensity decay parameter * ln( initial failure intensity * failure intensity decay parameter * time + 1 )

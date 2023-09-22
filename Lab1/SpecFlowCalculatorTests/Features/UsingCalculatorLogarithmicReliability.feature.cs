@@ -82,10 +82,10 @@ namespace SpecFlowCalculatorTests.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Calculating Failure Intensity using Logarithmic Model")]
         [NUnit.Framework.CategoryAttribute("LogarithmicReliability")]
-        [NUnit.Framework.TestCaseAttribute("1", "11", "2", "-4.5", null)]
-        [NUnit.Framework.TestCaseAttribute("10", "3", "4", "2.5", null)]
-        [NUnit.Framework.TestCaseAttribute("5", "4", "6", "1.67", null)]
-        public async System.Threading.Tasks.Task CalculatingFailureIntensityUsingLogarithmicModel(string value1, string value2, string value3, string value4, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("10", "0.02", "50", "3.68", null)]
+        [NUnit.Framework.TestCaseAttribute("55", "0.03", "45", "14.3", null)]
+        [NUnit.Framework.TestCaseAttribute("50", "0.025", "60", "11.16", null)]
+        public async System.Threading.Tasks.Task CalculatingFailureIntensityUsingLogarithmicModel(string initialIntensity, string decayParameter, string expectedFailure, string result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LogarithmicReliability"};
@@ -95,10 +95,10 @@ namespace SpecFlowCalculatorTests.Features
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("value1", value1);
-            argumentsOfScenario.Add("value2", value2);
-            argumentsOfScenario.Add("value3", value3);
-            argumentsOfScenario.Add("value4", value4);
+            argumentsOfScenario.Add("initialIntensity", initialIntensity);
+            argumentsOfScenario.Add("decayParameter", decayParameter);
+            argumentsOfScenario.Add("expectedFailure", expectedFailure);
+            argumentsOfScenario.Add("result", result);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculating Failure Intensity using Logarithmic Model", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);
@@ -115,10 +115,10 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 13
   await testRunner.WhenAsync(string.Format("I have entered {0} , {1}  and {2} into the calculator and press log_failure_inten" +
-                            "sity", value1, value2, value3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                            "sity", initialIntensity, decayParameter, expectedFailure), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 14
-  await testRunner.ThenAsync(string.Format("the log reliability result should be {0}", value4), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  await testRunner.ThenAsync(string.Format("the log reliability result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -127,10 +127,10 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Calculating Average Expected Failure using Logarithmic Model")]
         [NUnit.Framework.CategoryAttribute("LogarithmicReliability")]
-        [NUnit.Framework.TestCaseAttribute("2", "11", "4", "0.40", null)]
-        [NUnit.Framework.TestCaseAttribute("10", "3", "4", "1.58", null)]
-        [NUnit.Framework.TestCaseAttribute("6", "5", "2", "0.82", null)]
-        public async System.Threading.Tasks.Task CalculatingAverageExpectedFailureUsingLogarithmicModel(string value1, string value2, string value3, string value4, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("2", "0.11", "4", "5.74", null)]
+        [NUnit.Framework.TestCaseAttribute("10", "0.3", "4", "8.54", null)]
+        [NUnit.Framework.TestCaseAttribute("6", "0.5", "2", "3.89", null)]
+        public async System.Threading.Tasks.Task CalculatingAverageExpectedFailureUsingLogarithmicModel(string initialFailure, string decayParameter, string time, string result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "LogarithmicReliability"};
@@ -140,10 +140,10 @@ this.ScenarioInitialize(scenarioInfo);
             }
             string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("value1", value1);
-            argumentsOfScenario.Add("value2", value2);
-            argumentsOfScenario.Add("value3", value3);
-            argumentsOfScenario.Add("value4", value4);
+            argumentsOfScenario.Add("initialFailure", initialFailure);
+            argumentsOfScenario.Add("decayParameter", decayParameter);
+            argumentsOfScenario.Add("time", time);
+            argumentsOfScenario.Add("result", result);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculating Average Expected Failure using Logarithmic Model", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 22
 this.ScenarioInitialize(scenarioInfo);
@@ -160,10 +160,102 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 24
   await testRunner.WhenAsync(string.Format("I have entered {0} , {1}  and {2} into the calculator and press log_average_expec" +
-                            "ted_failure", value1, value2, value3), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                            "ted_failure", initialFailure, decayParameter, time), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 25
-  await testRunner.ThenAsync(string.Format("the log reliability result should be {0}", value4), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  await testRunner.ThenAsync(string.Format("the log reliability result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Calculating Failure Intensity using Logarithmic Model with negative input results" +
+            " in error")]
+        [NUnit.Framework.CategoryAttribute("LogarithmicReliability")]
+        [NUnit.Framework.TestCaseAttribute("0", "-11", "2", null)]
+        [NUnit.Framework.TestCaseAttribute("-10", "3", "4", null)]
+        [NUnit.Framework.TestCaseAttribute("5", "4", "-6", null)]
+        public async System.Threading.Tasks.Task CalculatingFailureIntensityUsingLogarithmicModelWithNegativeInputResultsInError(string initialIntensity, string decayParameter, string expectedFailure, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "LogarithmicReliability"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("initialIntensity", initialIntensity);
+            argumentsOfScenario.Add("decayParameter", decayParameter);
+            argumentsOfScenario.Add("expectedFailure", expectedFailure);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculating Failure Intensity using Logarithmic Model with negative input results" +
+                    " in error", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 33
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 34
+  await testRunner.GivenAsync("I have a calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 35
+  await testRunner.WhenAsync(string.Format("I have entered {0} , {1}  and {2} into the calculator and press log_failure_inten" +
+                            "sity", initialIntensity, decayParameter, expectedFailure), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 36
+  await testRunner.ThenAsync("the log reliability result will return an error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Calculating Average Expected Failure using Logarithmic Model with negative input " +
+            "results in error")]
+        [NUnit.Framework.CategoryAttribute("LogarithmicReliability")]
+        [NUnit.Framework.TestCaseAttribute("-2", "11", "4", null)]
+        [NUnit.Framework.TestCaseAttribute("10", "-3", "4", null)]
+        [NUnit.Framework.TestCaseAttribute("6", "5", "-2", null)]
+        public async System.Threading.Tasks.Task CalculatingAverageExpectedFailureUsingLogarithmicModelWithNegativeInputResultsInError(string initialFailure, string decayParameter, string time, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "LogarithmicReliability"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("initialFailure", initialFailure);
+            argumentsOfScenario.Add("decayParameter", decayParameter);
+            argumentsOfScenario.Add("time", time);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Calculating Average Expected Failure using Logarithmic Model with negative input " +
+                    "results in error", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 44
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 45
+  await testRunner.GivenAsync("I have a calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 46
+  await testRunner.WhenAsync(string.Format("I have entered {0} , {1}  and {2} into the calculator and press log_average_expec" +
+                            "ted_failure", initialFailure, decayParameter, time), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 47
+  await testRunner.ThenAsync("the log reliability result will return an error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

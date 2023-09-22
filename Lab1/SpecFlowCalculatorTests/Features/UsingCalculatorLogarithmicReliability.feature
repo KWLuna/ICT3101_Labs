@@ -10,21 +10,43 @@
 @LogarithmicReliability
 Scenario Outline: Calculating Failure Intensity using Logarithmic Model
 		Given I have a calculator
-		When I have entered <value1> , <value2>  and <value3> into the calculator and press log_failure_intensity
-		Then the log reliability result should be <value4>
+		When I have entered <initialIntensity> , <decayParameter>  and <expectedFailure> into the calculator and press log_failure_intensity
+		Then the log reliability result should be <result>
 		Examples:
-		| value1 | value2 | value3 | value4 |
-		| 1      | 11     | 2      | -4.5   |
-		| 10     | 3      | 4      | 2.5    |
-		| 5      | 4      | 6      | 1.67   |
+		| initialIntensity | decayParameter | expectedFailure | result |
+		| 10               | 0.02           | 50              | 3.68   |
+		| 55               | 0.03           | 45              | 14.26  |
+		| 50               | 0.025          | 60              | 11.16  |
 		
 @LogarithmicReliability
 Scenario Outline: Calculating Average Expected Failure using Logarithmic Model
 		Given I have a calculator
-		When I have entered <value1> , <value2>  and <value3> into the calculator and press log_average_expected_failure
-		Then the log reliability result should be <value4>
+		When I have entered <initialFailure> , <decayParameter>  and <time> into the calculator and press log_average_expected_failure
+		Then the log reliability result should be <result>
 		Examples:
-		| value1 | value2 | value3 | value4 |
-		| 2      | 11     | 4      | 0.40   |
-		| 10     | 3      | 4      | 1.58   |
-		| 6      | 5      | 2      | 0.82   |
+		| initialFailure | decayParameter | time | result |
+		| 2              | 0.11           | 4    | 5.74   |
+		| 10             | 0.3            | 4    | 8.54   |
+		| 6              | 0.5            | 2    | 3.89   |
+		
+@LogarithmicReliability
+Scenario Outline: Calculating Failure Intensity using Logarithmic Model with negative input results in error
+		Given I have a calculator
+		When I have entered <initialIntensity> , <decayParameter>  and <expectedFailure> into the calculator and press log_failure_intensity
+		Then the log reliability result will return an error
+		Examples:
+		| initialIntensity | decayParameter | expectedFailure |
+		| 0                | -11            | 2               |
+		| -10              | 3              | 4               |
+		| 5                | 4              | -6              |
+
+@LogarithmicReliability
+Scenario Outline: Calculating Average Expected Failure using Logarithmic Model with negative input results in error
+		Given I have a calculator
+		When I have entered <initialFailure> , <decayParameter>  and <time> into the calculator and press log_average_expected_failure
+		Then the log reliability result will return an error
+		Examples:
+		| initialFailure | decayParameter | time   |
+		| -2             | 11             | 4      |
+		| 10             | -3             | 4      |
+		| 6              | 5              | -2     |
