@@ -36,7 +36,7 @@
 # For a complete CI/CD sample to get started with GitHub Action workflows for Desktop Applications,
 # refer to https://github.com/microsoft/github-actions-for-desktop-apps
 
-name: .NET Core Desktop
+name: Nunit & Specflow Tests
 
 on:
   push:
@@ -84,11 +84,11 @@ jobs:
     #   run: dotnet test
 
     - name: NUnit Tests
-      working-directory: Lab1/ICT3101_Calculator.UnitTests/
+      working-directory: Lab1\ICT3101_Calculator.UnitTests\
       run: dotnet test --no-build --verbosity normal
       
     - name: SpecFLow Tests
-      working-directory: Lab1/SpecFlowCalculatorTests/
+      working-directory: Lab1\SpecFlowCalculatorTests\
       run: dotnet test --no-build --verbosity normal
       
 
