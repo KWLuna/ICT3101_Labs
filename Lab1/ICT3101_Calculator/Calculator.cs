@@ -151,9 +151,9 @@ public class Calculator
     // Functional B - 3 Factorial, 1 Divide, 1 Multiply, 1 Subtract [Coefficient Binomial]
     public double UnknownFunctionB(double num1, double num2)
     {
-        // num1! / num2!* (num1 - num5)!
+        // num1! / num2!* (num1 - num2)!
         double numerator = Factorial(num1);
-        double denominator = Multiply(Factorial(num1), Factorial(Subtract(num1, num2)));
+        double denominator = Multiply(Factorial(num2), Factorial(Subtract(num1, num2)));
         double result = Divide(numerator, denominator);
         return RoundUp(result);
     }
