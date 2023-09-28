@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

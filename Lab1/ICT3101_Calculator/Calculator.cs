@@ -252,4 +252,23 @@ public class Calculator
         return DefectDensity(newDefect, newKLOC);
     }
 
+    public double GenMagicNum(double input, IFileReader fileReader)
+    {
+        //if(input < 0)
+            //throw new ArgumentException("Cannot input negative!");
+
+        double result = 0;
+        int choice = Convert.ToInt16(input);
+        //Dependency------------------------------
+        //FileReader getTheMagic = new FileReader();
+        //----------------------------------------
+        string[] magicStrings = fileReader.Read("MagicNumbers.txt");
+        Console.WriteLine(magicStrings[choice]);
+        if ((choice >= 0) && (choice < magicStrings.Length))
+        {
+            result = Convert.ToDouble(magicStrings[choice]);
+        }
+        result = (result > 0) ? (2 * result) : (-2 * result);
+        return result;
+    }
 }

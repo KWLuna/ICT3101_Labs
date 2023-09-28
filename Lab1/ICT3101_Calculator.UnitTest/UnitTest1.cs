@@ -1,8 +1,10 @@
-namespace ICT3101_Caculator.UnitTests
+namespace ICT3101_Caculator.UnitTest
 {
     public class CalculatorTests
     {
         private Calculator _calculator;
+        FileReader getTheMagic;
+
 
         // Setup gets called before any test
         [SetUp]
@@ -10,6 +12,7 @@ namespace ICT3101_Caculator.UnitTests
         {
             // Arrange
             _calculator = new Calculator();
+            getTheMagic = new FileReader();
         }
 
         // Naming Convention: MethodNameWe’reTesting_ScenarioWe’reTesting_ExpectedBehaviourOrResult
@@ -192,18 +195,45 @@ namespace ICT3101_Caculator.UnitTests
             Assert.That(result, Is.EqualTo(10));
         }
         [Test]
-        public void UnknownFunctionB_WhenGivenTest3_ResultThrowArgumnetException()
+        public void UnknownFunctionB_WhenGivenTest3_ResultThrowArgumentException()
         {
             // Act
             // Assert
             Assert.That(() => _calculator.UnknownFunctionB(-4, 5), Throws.ArgumentException);
         }
         [Test]
-        public void UnknownFunctionB_WhenGivenTest4_ResultThrowArgumnetException()
+        public void UnknownFunctionB_WhenGivenTest4_ResultThrowArgumentException()
         {
             // Act
             // Assert
             Assert.That(() => _calculator.UnknownFunctionB(4, 5), Throws.ArgumentException);
         }
+
+        [Test]
+        public void GenMagicNum_WhenGivenTest0_Result()
+        {
+            // Act
+            double result = _calculator.GenMagicNum(3, getTheMagic);
+            // Assert
+            Assert.That(result, Is.EqualTo(6));
+        }
+
+        [Test]
+        public void GenMagicNum_WhenGivenTest1_Result()
+        {
+            // Act
+            double result = _calculator.GenMagicNum(2, getTheMagic);
+            // Assert
+            Assert.That(result, Is.EqualTo(4));
+        }
+        //[Test]
+        //[TestCase(-1)]
+        //[TestCase(-5)]
+        //public void GenMagicNum_InputIsNegative_ResultThrowsArgumentException(int a)
+        //{
+        //    // Act
+        //    // Assert
+        //    Assert.That(() => _calculator.GenMagicNum(a), Throws.ArgumentException);
+        //}
     }
 }

@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/ZaW70YJuC/nEasilLTb3APOvLE9djTgq17U6j0CjV0n9PYruC429buOg/lSLgoLPMZRE7TVcG6vcNxNDcZjbw==",
+  "dgSpecHash": "eGomohGV8H2+ReCO7biWmwmg98TVqeB+KE3egDip7gMSp3sqNOvgI4yHgVjjSXcp8/7NegC4fDRdIiGu5P7vRg==",
   "success": true,
   "projectFilePath": "C:\\Github_KW\\ICT3101_Labs\\Lab1\\ICT3101_Calculator\\ICT3101_Calculator.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jagat\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\jagat\\.nuget\\packages\\moq\\4.20.69\\moq.4.20.69.nupkg.sha512",
+    "C:\\Users\\jagat\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
