@@ -4796,11 +4796,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github_KW\\ICT3101\\Lab1\\SpecFlowCalculatorTests\\SpecFlowCalculatorTests.csproj",
+      "projectUniqueName": "C:\\Github_KW\\ICT3101_Labs\\Lab1\\SpecFlowCalculatorTests\\SpecFlowCalculatorTests.csproj",
       "projectName": "SpecFlowCalculatorTests",
-      "projectPath": "C:\\Github_KW\\ICT3101\\Lab1\\SpecFlowCalculatorTests\\SpecFlowCalculatorTests.csproj",
+      "projectPath": "C:\\Github_KW\\ICT3101_Labs\\Lab1\\SpecFlowCalculatorTests\\SpecFlowCalculatorTests.csproj",
       "packagesPath": "C:\\Users\\jagat\\.nuget\\packages\\",
-      "outputPath": "C:\\Github_KW\\ICT3101\\Lab1\\SpecFlowCalculatorTests\\obj\\",
+      "outputPath": "C:\\Github_KW\\ICT3101_Labs\\Lab1\\SpecFlowCalculatorTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jagat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4817,8 +4817,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Github_KW\\ICT3101\\Lab1\\ICT3101_Calculator\\ICT3101_Calculator.csproj": {
-              "projectPath": "C:\\Github_KW\\ICT3101\\Lab1\\ICT3101_Calculator\\ICT3101_Calculator.csproj"
+            "C:\\Github_KW\\ICT3101_Labs\\Lab1\\ICT3101_Calculator\\ICT3101_Calculator.csproj": {
+              "projectPath": "C:\\Github_KW\\ICT3101_Labs\\Lab1\\ICT3101_Calculator\\ICT3101_Calculator.csproj"
             }
           }
         }
