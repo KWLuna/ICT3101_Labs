@@ -218,6 +218,8 @@ namespace ICT3101_Caculator.UnitTest
             Assert.That(result, Is.EqualTo(6));
         }
 
+
+// Cannot input alphabet, too big number, decimal must round up
         [Test]
         public void GenMagicNum_WhenGivenTest1_Result()
         {
